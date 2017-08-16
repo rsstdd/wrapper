@@ -1,0 +1,207 @@
+/* ==== Main div ==== */
+/* ================== */
+#hummingtree {
+  color: black;
+  overflow: hidden;
+  position: relative;
+  height: 600px; 
+  width: 275pt;
+  transform-origin: bottom;
+  background-image: url('https://storage.googleapis.com/ads_images_hummingtree/5.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden
+ }
+  
+.hum-logo {
+  background: url('https://storage.googleapis.com/ads_images_hummingtree/watermark.png');
+  background-size: 40% auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  bottom: 3%;
+ }
+
+/* ==== Slider ==== */
+/* ================ */
+
+.hum-slider {
+  overflow-y: none;
+  position: absolute;
+  bottom: 0;
+  height: 45%;
+  width: 100%;
+  /*padding: 0 10%;*/
+  text-align: center;
+  transition: transform .3s ease;
+  -webkit-transition: -webkit-transform .3s ease;
+  -moz-transition: -moz-transform .3s ease;
+  -ms-transition: -ms-transform .3s ease;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  opacity: 0.80;
+}
+
+.hum-slider h2 {
+  padding-top: 10%;
+}
+
+.hum-slider.hum-closed {
+  border-top: solid 5px #AD88D2;
+  transition: 0.3s;
+  transition-timing-function: ease-out;
+  margin-bottom: 3%;
+  transform: translate(0, 90%);
+  -webkit-transform: translate(0, 90%);
+  -moz-transform: translate(0, 90%);
+  -ms-transform: translate(0, 90%);
+}
+
+.hum-slider.hum-opened {
+  border-top: solid 5px #AD88D2;
+}
+
+.hum-hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s .3s, opacity .3s linear;
+ }
+
+/* ===== Cross/Close Icon ===== */
+/* ============================ */
+
+.close {
+  position: absolute;
+  left: 4%;
+  top: 4%;
+  opacity: 0.7;
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  left: 15px;
+  content: ' ';
+  height: 25px;
+  width: 1.5px;
+  background-color: #fff;
+}
+
+.close:before {
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+
+/* ===== Arrow Caret Icon ===== */
+/* ============================ */
+
+.hum-caret-down {
+  position: absolute;
+  left: 42%;
+  top: 4%;
+  cursor: pointer;
+  padding-right: 8%;
+}
+
+.hum-caret-down:before {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 10px;
+  border-top: 13px solid #AD88D2;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+}
+
+.hum-caret-down:after {
+  content: '';
+  position: absolute;
+  top: 25%;
+  left: 11px;
+  border-top: 11px solid #FFFFFF;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+}
+
+.hum-caret-up {
+  position: absolute;
+  left: 44%;
+  top: 3%;
+  cursor: pointer;
+  padding-right: 8%;
+}
+
+.hum-caret-up:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 13px solid #AD88D2;
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+}
+
+.hum-caret-up:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 2.7px;
+  border-bottom: 11px solid #FFFFFF;
+  border-left: 11px solid transparent;
+  border-right: 11px solid transparent;
+}
+
+.btn {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #AD88D2;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+/* ===== Button ===== */
+/* ================== */
+
+.hum-btn {
+  -webkit-border-radius: 8;
+  -moz-border-radius: 8;
+  border-radius: 8px;
+  color: #ffffff;
+  background: #AD88D2;
+  position: absolute;
+  bottom: 7%;
+  left: 33%;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  opacity: 1;
+  -webkit-box-shadow: .2px 1px 0px 1px #6e5686;
+  -moz-box-shadow:    .2px 1px 0px 1px #6e5686;
+  box-shadow:         .2px 1px 0px 1px #6e5686;
+}
+
+.hum-btn:hover {
+  background: #AD88D2;
+  background-image: -webkit-linear-gradient(top, #AD88D2, #8a6ca8);
+  background-image: -moz-linear-gradient(top, #AD88D2, #8a6ca8);
+  background-image: -ms-linear-gradient(top, #AD88D2, #8a6ca8);
+  background-image: -o-linear-gradient(top, #AD88D2, #8a6ca8);
+  background-image: linear-gradient(to bottom, #AD88D2, #8a6ca8);
+  text-decoration: none;
+}
