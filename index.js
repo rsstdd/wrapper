@@ -16,6 +16,10 @@ app.use(express.static(path.join('public')));
 app.use(cors());
 app.options('*', cors());
 
+// const modal = require('./routes/modal');
+// 
+// app.use(modal)
+
 app.use((err, _req, res, _next) => {
     if (err.output && err.output.statusCode) {
         return res
@@ -37,12 +41,8 @@ app.use((err, _req, res, _next) => {
     res.sendStatus(500);
 });
 
-const httpsOptions = {
-    key: fs.readFileSync('./key.pem'),
-    cert: fs.readFileSync('./cert.pem')
-}
 
-const server = https.createServer(httpsOptions, app)
+// const server = https.createServer(httpsOptions, app)
 
 app.listen(port, () => {
     console.log(`Server running on ${port}`)

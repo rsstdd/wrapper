@@ -4,8 +4,8 @@
   color: black;
   overflow: hidden;
   position: relative;
-  height: 600px; 
-  width: 275pt;
+  /*height: 600px; 
+  width: 275pt;*/
   transform-origin: bottom;
   background-image: url('https://storage.googleapis.com/ads_images_hummingtree/5.jpg');
   background-repeat: no-repeat;
@@ -14,7 +14,7 @@
   overflow: hidden
  }
   
-.hum-logo {
+.hummingtree-logo {
   background: url('https://storage.googleapis.com/ads_images_hummingtree/watermark.png');
   background-size: 40% auto;
   background-repeat: no-repeat;
@@ -28,13 +28,12 @@
 /* ==== Slider ==== */
 /* ================ */
 
-.hum-slider {
+.hummingtree-slider {
   overflow-y: none;
   position: absolute;
   bottom: 0;
   height: 45%;
   width: 100%;
-  /*padding: 0 10%;*/
   text-align: center;
   transition: transform .3s ease;
   -webkit-transition: -webkit-transform .3s ease;
@@ -48,11 +47,11 @@
   opacity: 0.80;
 }
 
-.hum-slider h2 {
+.hummingtree-slider h2 {
   padding-top: 10%;
 }
 
-.hum-slider.hum-closed {
+.hummingtree-slider.hummingtree-closed {
   border-top: solid 5px #AD88D2;
   transition: 0.3s;
   transition-timing-function: ease-out;
@@ -63,11 +62,11 @@
   -ms-transform: translate(0, 90%);
 }
 
-.hum-slider.hum-opened {
+.hummingtree-slider.hummingtree-opened {
   border-top: solid 5px #AD88D2;
 }
 
-.hum-hidden {
+.hummingtree-hidden {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s .3s, opacity .3s linear;
@@ -76,18 +75,18 @@
 /* ===== Cross/Close Icon ===== */
 /* ============================ */
 
-.close {
+.hummingtree-close {
   position: absolute;
   left: 4%;
   top: 4%;
   opacity: 0.7;
 }
 
-.close:hover {
+.hummingtree-close:hover {
   opacity: 1;
 }
 
-.close:before, .close:after {
+.hummingtree-close:before, .hummingtree-close:after {
   position: absolute;
   left: 15px;
   content: ' ';
@@ -96,11 +95,11 @@
   background-color: #fff;
 }
 
-.close:before {
+.hummingtree-close:before {
   transform: rotate(45deg);
 }
 
-.close:after {
+.hummingtree-close:after {
   transform: rotate(-45deg);
 }
 
@@ -108,7 +107,7 @@
 /* ===== Arrow Caret Icon ===== */
 /* ============================ */
 
-.hum-caret-down {
+.hummingtree-caret-down {
   position: absolute;
   left: 42%;
   top: 4%;
@@ -116,7 +115,7 @@
   padding-right: 8%;
 }
 
-.hum-caret-down:before {
+.hummingtree-caret-down:before {
   content: '';
   position: absolute;
   top: 25%;
@@ -126,7 +125,7 @@
   border-right: 13px solid transparent;
 }
 
-.hum-caret-down:after {
+.hummingtree-caret-down:after {
   content: '';
   position: absolute;
   top: 25%;
@@ -136,7 +135,7 @@
   border-right: 11px solid transparent;
 }
 
-.hum-caret-up {
+.hummingtree-caret-up {
   position: absolute;
   left: 44%;
   top: 3%;
@@ -144,7 +143,7 @@
   padding-right: 8%;
 }
 
-.hum-caret-up:before {
+.hummingtree-caret-up:before {
   content: '';
   position: absolute;
   top: 0;
@@ -154,7 +153,7 @@
   border-right: 13px solid transparent;
 }
 
-.hum-caret-up:after {
+.hummingtree-caret-up:after {
   content: '';
   position: absolute;
   top: 3px;
@@ -164,7 +163,7 @@
   border-right: 11px solid transparent;
 }
 
-.btn {
+.hummingtree-btn {
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
@@ -179,14 +178,14 @@
 /* ===== Button ===== */
 /* ================== */
 
-.hum-btn {
+.hummingtree-btn {
   -webkit-border-radius: 8;
   -moz-border-radius: 8;
   border-radius: 8px;
   color: #ffffff;
   background: #AD88D2;
   position: absolute;
-  bottom: 7%;
+  bottom: 10;
   left: 33%;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
@@ -194,14 +193,4 @@
   -webkit-box-shadow: .2px 1px 0px 1px #6e5686;
   -moz-box-shadow:    .2px 1px 0px 1px #6e5686;
   box-shadow:         .2px 1px 0px 1px #6e5686;
-}
-
-.hum-btn:hover {
-  background: #AD88D2;
-  background-image: -webkit-linear-gradient(top, #AD88D2, #8a6ca8);
-  background-image: -moz-linear-gradient(top, #AD88D2, #8a6ca8);
-  background-image: -ms-linear-gradient(top, #AD88D2, #8a6ca8);
-  background-image: -o-linear-gradient(top, #AD88D2, #8a6ca8);
-  background-image: linear-gradient(to bottom, #AD88D2, #8a6ca8);
-  text-decoration: none;
 }

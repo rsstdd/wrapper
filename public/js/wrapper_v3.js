@@ -50,7 +50,7 @@ const _hummingtree = (() => {
     adTitle.textContent = `${title}`;
     adText.textContent = `${text}`;
 
-    // wrapper.addEventListener('click', conversion, false);
+    wrapper.addEventListener('click', conversion, false);
 
     hummingtree.appendChild(wrapper);
     wrapper.appendChild(adTitle);
@@ -76,100 +76,6 @@ const _hummingtree = (() => {
         console.error(err);
       });
   };
-
-  this.Modal = function() {
-
-    this.closeButton = null;
-    this.modal = null;
-    this.overlay = null;
-    this.transitionEnd = transitionSelect();
-
-    if (arguments[0] && typeof arguments[0] === 'object') {
-      this.options = extendDefaults(defaults, arguments[0]);
-    }
-
-    if(config.autoOpen === true) this.open();
-  }
-
-  // Public Methods
-
-  Modal.prototype.close = function() {
-    const _ = this;
-    this.modal.className = this.modal.className.replace(' hum-open', '');
-    this.overlay.className = this.overlay.className.replace(' hum-open', '');
-    this.modal.addEventListener(this.transitionEnd, () => {
-      _.modal.parentNode.removeChild(_.modal);
-    });
-    this.overlay.addEventListener(this.transitionEnd, () => {
-      if (_.overlay.parentNode) _.overlay.parentNode.removeChild(_.overlay);
-    });
-  }
-
-  Modal.prototype.open = function() {
-    buildOut.call(this);
-    initializeEvents.call(this);
-    window.getComputedStyle(this.modal).height;
-    this.modal.className = this.modal.className +
-      (this.modal.offsetHeight > window.innerHeight ?
-        ' hum-open hum-anchored' : ' hum-open');
-    this.overlay.className = this.overlay.className + ' hum-open';
-  }
-
-  function buildOut() {
-
-    let content;
-    let contentHolder;
-    let docFrag;
-
-    if (typeof this.options.content === 'string') {
-      content = this.options.content;
-    } else {
-      content = this.options.content.innerHTML;
-    }
-
-    docFrag = document.createDocumentFragment();
-
-    this.modal = document.createElement('div');
-    this.modal.className = 'hum-modal ';
-    this.modal.style.minWidth = `${config.WIDTH}px`;
-    this.modal.style.maxWidth = `${config.HEIGHT}px`;
-
-    this.closeButton = document.createElement('button');
-    this.closeButton.className = 'hum-close close-button';
-    this.closeButton.innerHTML = '&times;';
-    this.modal.appendChild(this.closeButton);
-
-    // If overlay is true, add one
-    if (config.OVERLAY === true) {
-      this.overlay = document.createElement('div');
-      this.overlay.className = 'hum-overlay ';
-      docFrag.appendChild(this.overlay);
-    }
-
-    // Create content area and append to modal
-    contentHolder = document.createElement('div');
-    contentHolder.className = 'hum-content';
-    contentHolder.innerHTML = content;
-    this.modal.appendChild(contentHolder);
-
-    // Append modal to DocumentFragment
-    docFrag.appendChild(this.modal);
-
-    // Append DocumentFragment to body
-    document.body.appendChild(docFrag);
-  }
-
-  function initializeEvents() {
-    if (this.closeButton) this.closeButton.addEventListener('click', this.close.bind(this));
-    if (this.overlay) this.overlay.addEventListener('click', this.close.bind(this));
-  }
-
-  const transitionSelect = () => {
-    const el = document.createElement('div');
-    if (el.style.WebkitTransition) return 'webkitTransitionEnd';
-    if (el.style.OTransition) return 'oTransitionEnd';
-    return 'transitionend';
-  }
 
   const getHummingtree = () => {
     const hummingtree = document.getElementById('hummingtree');
