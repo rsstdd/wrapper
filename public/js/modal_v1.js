@@ -35,8 +35,9 @@ const hummingtree = (() => {
     const adTitle = document.createElement('h2');
     const adText = document.createElement('p');
     const button = document.createElement('span');
-    const aTag = document.createElement('a');
-    
+    const adLink = document.createElement('a');
+    const humLink = document.createElement('a');
+
     caret = document.createElement('span');
     slider = document.createElement('div');
     logo = document.createElement('div');
@@ -44,7 +45,7 @@ const hummingtree = (() => {
     overlay = document.createElement('div');
     hummingtreeDiv = document.createElement('div');
     adModal = document.createElement('div');
-    
+
     overlay.className = 'hummingtree-overlay'
     adModal.className = 'hummingtree-modal hummingtree-open hummingtree-fade-and-drop'
     hummingtreeDiv.id = 'hummingtree';
@@ -58,18 +59,21 @@ const hummingtree = (() => {
     hummingtreeDiv.style.width = `${config.WIDTH}`;
     adTitle.textContent = `${title}`;
     adText.textContent = `${text}`;
-    aTag.href = `${link}`;
-    aTag.setAttribute('target', '_blank');
+    adLink.href = `${link}`;
+    adLink.setAttribute('target', '_blank');
+    humLink.href = 'http://www.hummingtree.co/'
+    humLink.setAttribute('target', '_blank');
     button.textContent = 'Learn More'
     docFrag.appendChild(hummingtreeDiv);
     hummingtreeDiv.appendChild(close);
-    hummingtreeDiv.appendChild(logo);
+    hummingtreeDiv.appendChild(humLink);
+    humLink.appendChild(logo);
     hummingtreeDiv.appendChild(slider);
     slider.appendChild(caret);
     slider.appendChild(adTitle);
     slider.appendChild(adText);
-    slider.appendChild(aTag);
-    aTag.appendChild(button);
+    slider.appendChild(adLink);
+    adLink.appendChild(button);
     adModal.appendChild(docFrag);
     button.addEventListener('click', _conversion, false);
     caret.addEventListener('click', _toggleSlider, false);  
@@ -115,9 +119,7 @@ const hummingtree = (() => {
         URL_KEY = json.urlKey;
         _createWrapper(json);
       })
-      .catch((err) => {
-        console.error(err);
-      });
+      .catch(err => console.error(err));
   };
 
   return {
