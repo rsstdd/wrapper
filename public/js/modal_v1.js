@@ -46,7 +46,7 @@ const hummingtree = (() => {
     hummingtreeDiv = document.createElement('div');
     adModal = document.createElement('div');
 
-    overlay.className = 'hummingtree-overlay'
+    overlay.className = 'hummingtree-overlay hummingtree-fade-and-drop'
     adModal.className = 'hummingtree-modal hummingtree-open hummingtree-fade-and-drop'
     hummingtreeDiv.id = 'hummingtree';
     close.className = 'hummingtree-close hummingtree-hairline';
