@@ -1,5 +1,5 @@
 const hummingtree = (() => {
-  let config = {};
+  let HOST_ID;
   let URL_KEY = '';
   let slider;
   let caret;
@@ -9,13 +9,9 @@ const hummingtree = (() => {
   let hummingtreeDiv;
 
   const init = ({
-    height = '500px',
-    width = '275px',
     hostId = '',
   }) => {
-    config.HEIGHT = height;
-    config.WIDTH = width;
-    config.HOST_ID = hostId;
+    HOST_ID = hostId;
   };
 
   const _createCORSRequest = (method, url) => {
@@ -55,8 +51,6 @@ const hummingtree = (() => {
     caret.className = 'hummingtree-caret-up';
     button.className = 'hummingtree-btn';
     hummingtreeDiv.style.backgroundImage = `url(${imageUrl})`;
-    hummingtreeDiv.style.height = `${config.HEIGHT}`;
-    hummingtreeDiv.style.width = `${config.WIDTH}`;
     adTitle.textContent = `${title}`;
     adText.textContent = `${text}`;
     adLink.href = `${link}`;
@@ -113,7 +107,7 @@ const hummingtree = (() => {
   }
 
   const getAd = () => {
-    _createCORSRequest('POST', `http://www.hummingtree.co/api/delivery/${config.HOST_ID}`)
+    _createCORSRequest('POST', `http://www.hummingtree.co/api/delivery/${HOST_ID}`)
       .then((data) => {
         const json = JSON.parse(data);
         URL_KEY = json.urlKey;

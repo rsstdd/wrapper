@@ -2,6 +2,29 @@
 /* ====================== */
 @import url('https://fonts.googleapis.com/css?family=Didact+Gothic|Nunito');
 
+/* ==== Main div ==== */
+/* ================== */
+
+#hummingtree {
+  color: black;
+  overflow: hidden;
+  position: absolute;
+  top: 15%; right: 0;
+  left: 0; bottom: 0;
+  margin: 0 auto;
+  height: 575px;
+  width: 340px;
+  transform-origin: bottom;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+ }
+ 
+ /* ==== Overlay div ==== */
+ /* ===================== */
+
 .hummingtree-overlay {
   position: fixed;
   z-index: 9998;
@@ -17,6 +40,9 @@
   transition: 0.9s opacity ease;
   background: rgba(0,0,0,.6);
 }
+
+/* ==== Modal div ==== */
+/* =================== */
 
 .hummingtree-modal {
   position: absolute;
@@ -112,24 +138,9 @@
   transition: 0.9s opacity 0.9s ease;
 }
 
-/* ==== Main div ==== */
+/* ====   Logo   ==== */
 /* ================== */
-
-#hummingtree {
-  color: black;
-  overflow: hidden;
-  position: absolute;
-  top: 15%; right: 0;
-  left: 0; bottom: 0;
-  margin: 0 auto;
-  transform-origin: bottom;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  overflow: hidden
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
- }
-
+ 
 .hummingtree-logo {
   background: url('https://storage.googleapis.com/ads_images_hummingtree/treewithwordmark_300dpi.png');
   background-size: 40% auto;
@@ -141,9 +152,9 @@
   bottom: 18%;
  }
  
-.hummingtree-logo:hover {
+/*.hummingtree-logo:hover {
   background-size: 41% auto;
- }
+ }*/
 
 /* ==== Slider ==== */
 /* ================ */
@@ -151,6 +162,7 @@
 .hummingtree-slider {
   overflow-y: none;
   position: absolute;
+  padding: 5%;
   bottom: 0;
   height: 45%;
   width: 100%;
@@ -169,7 +181,7 @@
 .hummingtree-slider h2 {
   font-family: 'Nunito', sans-serif;
   color: black;
-  padding-top: 5%;
+  text-align: center;
 }
 
 .hummingtree-slider a:link {
@@ -182,6 +194,7 @@
   font-size: 12pt;
   font-kerning: 0.4pt;
   margin-bottom: 15%;
+  text-align: center;
 }
 
 .hummingtree-slider.hummingtree-closed {
@@ -197,6 +210,7 @@
 }
 
 .hummingtree-slider.hummingtree-opened {
+  overflow-y: scroll;
   border-top: solid 5px #404040;
   box-shadow: 0px 2px 2px -3px rgba(50, 50, 50, 0.75);
   opacity: 0.85;
@@ -310,7 +324,7 @@
   padding: 0;
   width: 150px;
   height: 40px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   bottom: -10%;
   -moz-border-radius: 8;
   font-family: 'Didact Gothic', sans-serif;
@@ -319,7 +333,131 @@
   text-transform: uppercase;
   background: #404040;
 }
+
 .hummingtree-btn:hover {
   background: #404040;
   text-decoration: none !important;
 }
+
+/* ==== Responsive Breakpoints  ==== */
+/* ================================= */
+
+/* ----------- iPhone 5 and 5S ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+    #hummingtree {
+      top: 8%;
+      height: 90%;
+      width: 80%;
+    }
+    
+    .hummingtree-modal {
+      height: 100%;
+      
+    }
+    
+    .hummingtree-slider h2 {
+      padding-top: 0;
+      font-size: 45pt;
+    }
+
+    .hummingtree-slider a:link {
+      text-decoration: none;
+      margin-top: 10%;
+    }
+
+    .hummingtree-slider p {
+      font-family: 'Didact Gothic', sans-serif;
+      font-size: 28pt;
+      font-kerning: 0.4pt;
+      margin-bottom: 5%;
+      padding-bottom: 10%;
+    }
+    
+    .hummingtree-btn {
+      font-size: 30pt; 
+      padding: 15px 25px;
+      bottom: -10%;
+      margin-bottom: 0;
+    }
+    
+    .hummingtree-caret-up {
+      left: 48%;
+    }
+    
+    .hummingtree-caret-down {
+      left: 48%;
+    }
+}
+
+
+/* ----------- Phones ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2) { 
+
+}
+
+/* ----------- Tablets ----------- */
+
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    #hummingtree {
+      top: 10%;
+      height: 80%;
+      width: 75%;
+    }
+    
+    .hummingtree-slider.hummingtree-closed {
+      margin-bottom: 15%;
+    }
+    
+    .hummingtree-slider h2 {
+      padding: 3%;
+      font-size: 40pt;
+    }
+    
+    .hummingtree-slider.hummingtree-opened h2 {
+      padding: 5%;
+      font-size: 40pt;
+    }
+
+    .hummingtree-slider a:link {
+      text-decoration: none;
+      margin-top: 15%;
+    }
+
+    .hummingtree-slider p {
+      font-size: 38pt;
+      margin-bottom: 30%;
+    }
+    
+    .hummingtree-logo {
+      height: 15%;
+      bottom: 15%;
+    }
+    
+    .hummingtree-btn {
+      font-size: 25pt; 
+      /*bottom: 2%;*/
+    }
+    
+    .hummingtree-caret-up {
+      left: 48%;
+    }
+    
+    .hummingtree-caret-down {
+      left: 48%;
+    }
+}
+
